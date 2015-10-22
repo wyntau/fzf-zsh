@@ -19,28 +19,8 @@ export MANPATH="$MANPATH:$fzf_path/man"
 
 export FZF_COMPLETION_TRIGGER='~~'
 
-# use git ls-files or ag is more slow than empty
-export FZF_DEFAULT_COMMAND='
-  (git ls-files . --cached --exclude-standard --others ||
-   find * -name ".*" -prune -o -type f -print -o -type l -print) 2> /dev/null'
-
-if type ag &> /dev/null; then
-  # Setting ag as the default source for fzf
-  export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only HEAD || ag -i -l --nocolor --nogroup --hidden
-    --ignore .git
-    --ignore .svn
-    --ignore .hg
-    --ignore .DS_Store
-    --ignore "**/*.pyc"
-    -g "") 2> /dev/null'
-fi;
-
-# To apply the command to CTRL-T as well
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 # auto completion is broken with zsh-autosuggestion plugin
 # so comment out this line
-# source "$fzf_zsh_path/../fzf/shell/completion.zsh"
+# source "$fzf_path/shell/completion.zsh"
 
 source "$fzf_path/shell/key-bindings.zsh"
