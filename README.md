@@ -4,7 +4,7 @@ wrap fzf to use in oh-my-zsh
 
 ### Note
 
-Because fzf is conflict with `zsh-autosuggestions`, so this plugin only enable <kbd>Ctrl-T</kbd>, <kbd>Ctrl-R</kbd> keybinding
+Because fzf is conflict with `zsh-autosuggestions`, so this plugin only enable fzf key-bindings, such as <kbd>Ctrl-T</kbd> and <kbd>Ctrl-R</kbd>.
 
 ### Usage
 
