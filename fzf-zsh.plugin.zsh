@@ -13,31 +13,35 @@ fzf_zsh_path="$( cd -P "$( dirname "$fzf_zsh_dir" )" && pwd )"
 
 fzf_path="$( cd "$fzf_zsh_path/../fzf/" && pwd )"
 
-# export $PAHT and $MANPATH
-export PATH="$PATH:$fzf_path/bin"
-export MANPATH="$MANPATH:$fzf_path/man"
+# only enable plugins when fzf and fzf-tmux are installed correctly
+if [ -x $fzf_path/bin/fzf ] && [ -x $fzf_path/bin/fzf-tmux ]; then
 
-# export FZF_DEFAULT_COMMAND='
-#   (git ls-files --cached --exclude-standard --others ||
-#    find * -name ".*" -prune -o -type f -print -o -type l -print) 2> /dev/null'
-# if type ag &> /dev/null; then
-#   export FZF_DEFAULT_COMMAND='(git ls-files --cached --exclude-standard --others ||
-#     ag -i -l --nocolor --nogroup --hidden \
-#       --ignore .git \
-#       --ignore .svn \
-#       --ignore .hg \
-#       --ignore .DS_Store \
-#       --ignore node_modules \
-#       --ignore bower_components \
-#       --ignore "**/*.pyc" \
-#       -g "") 2> /dev/null'
-# fi;
-# # To apply the command to CTRL-T as well
-# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  # export $PAHT and $MANPATH
+  export PATH="$PATH:$fzf_path/bin"
+  export MANPATH="$MANPATH:$fzf_path/man"
 
-# auto completion is broken with zsh-autosuggestion plugin
-# so comment out this line
-# export FZF_COMPLETION_TRIGGER='~~'
-# source "$fzf_path/shell/completion.zsh"
+  # export FZF_DEFAULT_COMMAND='
+  #   (git ls-files --cached --exclude-standard --others ||
+  #    find * -name ".*" -prune -o -type f -print -o -type l -print) 2> /dev/null'
+  # if type ag &> /dev/null; then
+  #   export FZF_DEFAULT_COMMAND='(git ls-files --cached --exclude-standard --others ||
+  #     ag -i -l --nocolor --nogroup --hidden \
+  #       --ignore .git \
+  #       --ignore .svn \
+  #       --ignore .hg \
+  #       --ignore .DS_Store \
+  #       --ignore node_modules \
+  #       --ignore bower_components \
+  #       --ignore "**/*.pyc" \
+  #       -g "") 2> /dev/null'
+  # fi;
+  # # To apply the command to CTRL-T as well
+  # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-source "$fzf_path/shell/key-bindings.zsh"
+  # auto completion is broken with zsh-autosuggestion plugin
+  # so comment out this line
+  # export FZF_COMPLETION_TRIGGER='~~'
+  # source "$fzf_path/shell/completion.zsh"
+
+  source "$fzf_path/shell/key-bindings.zsh"
+fi;
