@@ -11,14 +11,14 @@ Because fzf is conflict with `zsh-autosuggestions`, so this plugin only enable f
 1. install fzf to oh-my-zsh custom plugins directory
 
     ```bash
-    git clone https://github.com/junegunn/fzf.git oh-my-zsh/custom/plugins
+    git clone https://github.com/junegunn/fzf.git ${ZSH}/custom/plugins/fzf
     oh-my-zsh/custom/plugins/fzf/install --bin
     ```
 
 2. install fzf-zsh to oh-my-zsh custom plugins directory
 
     ```bash
-    git clone https://github.com/Treri/fzf-zsh.git oh-my-zsh/custom/plugins
+    git clone https://github.com/Treri/fzf-zsh.git ${ZSH}/custom/plugins/fzf-zsh
     ```
 
 3. add `fzf-zsh` in .zshrc `plugins` list
