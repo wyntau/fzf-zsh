@@ -12,7 +12,7 @@ Because fzf is conflict with `zsh-autosuggestions`, so this plugin only enable f
 
     ```bash
     git clone https://github.com/junegunn/fzf.git ${ZSH}/custom/plugins/fzf
-    oh-my-zsh/custom/plugins/fzf/install --bin
+    ${ZSH}/custom/plugins/fzf/install --bin
     ```
 
 2. install fzf-zsh to oh-my-zsh custom plugins directory
@@ -21,7 +21,7 @@ Because fzf is conflict with `zsh-autosuggestions`, so this plugin only enable f
     git clone https://github.com/Treri/fzf-zsh.git ${ZSH}/custom/plugins/fzf-zsh
     ```
 
-3. add `fzf-zsh` in .zshrc `plugins` list
+3. add `fzf-zsh` in your ~/.zshrc `plugins` list
 
     ```bash
     plugins=(... fzf-zsh ...)
