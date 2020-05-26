@@ -1,4 +1,6 @@
-## fzf-zsh
+## [DEPRECATED]fzf-zsh
+
+##### This project is deprecated, because oh-my-zsh has included a better fzf plugin
 
 wrap fzf to use in oh-my-zsh
 
