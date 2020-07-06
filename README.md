@@ -28,6 +28,7 @@ Because fzf is conflict with `zsh-autosuggestions`, so this plugin only enable f
     ```bash
     plugins=(... fzf-zsh ...)
     ```
+    > note: If 'vi-mode' in your plugins, you need add 'fzf-zsh' after the 'vi-mode'. Because both 'fzf-zsh' and 'vi-mode' bind key: '^R'. And you should know, this will mark for 'vi-mode history-incremental-search-backward' invalid(I think you want this).
 
 ### License
 
